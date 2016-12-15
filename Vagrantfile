@@ -33,6 +33,6 @@ Vagrant.configure(2) do |config|
     "www.humberevents.dev"
   ]
 
-config.vm.provision "shell", path: "scripts/vagrant-provision.sh"
+ config.vm.provision "shell", path: "scripts/vagrant-provision.sh"
 
 end
