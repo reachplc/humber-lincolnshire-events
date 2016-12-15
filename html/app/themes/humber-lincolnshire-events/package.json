@@ -1,7 +1,7 @@
 {
   "name": "humberevents",
   "license": "",
-  "private": true,
+  "private": false,
   "main": "gruntfile.js",
   "devDependencies": {
     "grunt": "1.0.x",
