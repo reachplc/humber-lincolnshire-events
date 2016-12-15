@@ -1,0 +1,63 @@
+# Trinity Mirror Humber & Lincolnshire
+
+## Development
+_assets
+
+## System
+
+error_log
+.DS_Store
+
+## Server
+
+.env
+/shared/*
+
+## Development
+
+bin
+.vagrant
+vendor/*
+
+## PHP
+composer.lock
+
+## NodeJS
+
+node_modules/
+npm-debug.log
+
+## WordPress
+
+html/wp/*
+html/media/*
+
+!html/media/index.php
+
+### Languages
+html/app/languages/*
+
+#### White-list Languages
+!html/app/languages/index.php
+
+### Plugins
+html/app/db.php
+html/app/plugins/*
+
+#### White-list Plugins
+!html/app/plugins/index.php
+
+
+### Themes
+.sass-cache
+html/app/themes/*
+
+#### White-list Themes
+!html/app/themes/index.php
+!html/app/themes/humber-lincolnshire-events
+
+#### CTBA 2016
+html/app/themes/humber-lincolnshire-events/style.css
+html/app/themes/humber-lincolnshire-events/editor-style.css
+html/app/themes/humber-lincolnshire-events/bower_components/
+html/app/themes/humber-lincolnshire-events/node_modules/
