@@ -1,26 +1,32 @@
 #!/bin/sh
 #
-# Provision the vagrant environment
-
+# Setup the vagrant environment
 
 # Setup PHP
+echo "Setup PHP..."
 phpenv local 5.5
-
 # Install PHP dependancies
-composer install --no-interaction
-./vendor/bin/phpcs --config-set installed_paths ./vendor/wp-coding-standards/wpcs/
+php -n /home/rof/bin/composer config -g github-oauth.github.com $GITHUB_ACCESS
+php -n /home/rof/bin/composer install --no-interaction  --prefer-dist
 
-# Setup Node
-nvm install 0.12.7
-nvm use 0.12.7
-
+# Setup NodeJS
+echo "Setup NodeJS..."
+nvm install 4.6
 # Install dependancies for running your tests or other tasks
-npm install grunt-cli -g
+npm install -g grunt-cli
 
-# Setup Theme
+# Setup Ruby
+echo "Setup Ruby..."
+echo "@TODO: Remove and use NodeJS compiler"
+gem install sass
+
+# Clone Parent Theme
+echo "Setup Parent Theme..."
+git clone --branch "master" --depth 50 git@github.com:trinitymirror/humber-lincolnshire-events.git ~/clone/html/app/themes/humber-lincolnshire-events
 npm install --prefix ./html/app/themes/humber-lincolnshire-events/
-cd ./html/app/themes/humber-lincolnshire-events/
-bower install
-grunt dev
-cd ~/clone
-#grunt --base ./html/app/themes/humber-lincolnshire-events/ dev
+
+# Setup TM Events Theme
+cd ~/clone/html/app/themes/humber-lincolnshire-events
+grunt build
+echo "Events Theme Built"
+cd ~/clone/

@@ -21,7 +21,7 @@ ssh $USERNAME@$HOST "mkdir $DEPLOY_TO/releases/$TIMESTAMP"
 
 # Copy files
 echo "Copy files to server"
-rsync -avz -e "ssh" --exclude="app/themes/ctba-2016/node_modules" --exclude="/media" --exclude="/app/languages" ./html/ $USERNAME@$HOST:$DEPLOY_TO/releases/$TIMESTAMP
+rsync -avz -e "ssh" --exclude="app/themes/humber-lincolnshire-events/node_modules" --exclude="/media" --exclude="/app/languages" ./html/ $USERNAME@$HOST:$DEPLOY_TO/releases/$TIMESTAMP
 
 # Symlink shared folders
 echo "Symlink shared folders"

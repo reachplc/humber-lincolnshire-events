@@ -28,6 +28,8 @@ Vagrant.configure(2) do |config|
   config.ssh.forward_agent = true
   config.ssh.insert_key = false
 
+  config.vm.network "private_network", ip: "192.168.33.111"
+
   config.hostsupdater.aliases = [
     "humberevents.dev",
     "www.humberevents.dev"
